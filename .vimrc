@@ -231,3 +231,4 @@ endif
 
 "----------------------------------------
 call pathogen#runtime_append_all_bundles()
+call metarw#define_wrapper_commands(1)

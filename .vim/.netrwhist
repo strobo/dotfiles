@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/strobo/Dropbox/dotfiles/.vim'
+let g:netrw_dirhist_2='/home/strobo/Dropbox/dotfiles/.vim/bundle'
+let g:netrw_dirhist_3='/home/strobo/Dropbox/dotfiles/.vim/bundle/vim-metarw-simplenote'
+let g:netrw_dirhist_4='/home/strobo/Dropbox/dotfiles/.vim/bundle/vim-metarw-simplenote/autoload'
+let g:netrw_dirhist_5='/home/strobo/Dropbox/dotfiles/.vim/bundle/vim-metarw-simplenote/autoload/metarw'
