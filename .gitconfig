@@ -1,0 +1,11 @@
+[user]
+	name = strobo
+	email = kax551@gmail.com
+[core]
+	editor = vim
+	excludesfile = /home/strobo/.gitignore
+[color]
+	ui = auto
+[ailas]
+	hist = log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
+
