@@ -98,7 +98,7 @@ set ruler
 
 " Always display the status line, even if only one window is displayed
 " ステータスラインを常に表示する
-set laststatus=2
+set laststatus=1
 
 " Instead of failing a command because of unsaved changes, instead raise a
 " dialogue asking if you wish to save changed files.
