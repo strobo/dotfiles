@@ -230,4 +230,4 @@ if has('iconv')
 endif
 
 "----------------------------------------
-call pathogen#runtime_append_all_bundles()
+"call pathogen#runtime_append_all_bundles()
