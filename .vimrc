@@ -98,7 +98,7 @@ set ruler
 
 " Always display the status line, even if only one window is displayed
 " ステータスラインを常に表示する
-set laststatus=1
+set laststatus=2
 
 " Instead of failing a command because of unsaved changes, instead raise a
 " dialogue asking if you wish to save changed files.
@@ -123,7 +123,7 @@ set t_vb=
 " Set the command window height to 2 lines, to avoid many cases of having to
 " "press <Enter> to continue"
 " コマンドラインの高さを2行に
-set cmdheight=2
+set cmdheight=1
 
 " Display line numbers on the left
 " 行番号を表示
@@ -246,7 +246,30 @@ filetype off
 set rtp+=~/.vim/vundle.git/    " (2)
 call vundle#rc()               " (3)
 
-Bundle 'JavaScript-syntax'
+Bundle 'Shougo/neocomplcache'
 Bundle 'kien/ctrlp.vim'
+Bundle 'JavaScript-syntax'
 
 filetype plugin indent on
+
+"----------------------------------------
+" Neocomplcace Settings
+"
+" tab controllable script
+
+let g:neocomplcache_enable_at_startup = 1
+function InsertTabWrapper()
+    if pumvisible()
+        return "\<c-n>"
+    endif
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k\|<\|/'
+        return "\<tab>"
+    elseif exists('&omnifunc') && &omnifunc == ''
+        return "\<c-n>"
+    else
+        return "\<c-x>\<c-o>"
+    endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+
