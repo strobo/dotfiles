@@ -230,4 +230,23 @@ if has('iconv')
 endif
 
 "----------------------------------------
-"call pathogen#runtime_append_all_bundles()
+" Vundle Settings
+"
+" --- examples ---
+" original repos on github
+" Bundle 'tpope/vim-fugitive'
+"
+" " vim-scripts repos
+" Bundle 'rails.vim'
+"
+" " non github repos
+" Bundle 'git://git.wincent.com/command-t.git'
+
+filetype off
+set rtp+=~/.vim/vundle.git/    " (2)
+call vundle#rc()               " (3)
+
+Bundle 'JavaScript-syntax'
+Bundle 'kien/ctrlp.vim'
+
+filetype plugin indent on
