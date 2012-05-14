@@ -148,16 +148,16 @@ set pastetoggle=<F11>
 " Do not change 'tabstop' from its default value of 8 with this setup.
 " タブ文字の代わりにスペース2個を使う場合の設定。
 " この場合、'tabstop'はデフォルトの8から変えない。
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+"set shiftwidth=4
+"set softtabstop=4
+"set expandtab
 
 " Indentation settings for using hard tabs for indent. Display tabs as
 " two characters wide.
 " インデントにハードタブを使う場合の設定。
 " タブ文字を2文字分の幅で表示する。
-"set shiftwidth=2
-"set tabstop=2
+set shiftwidth=2
+set tabstop=2
 
 
 "------------------------------------------------------------
@@ -187,47 +187,47 @@ set statusline=%<%f\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%4v\ 
 "colorscheme delek
 
 "------------------------------------------------------------
-if &encoding !=# 'utf-8'
-    set encoding=japan
-    set fileencoding=japan
-endif
-if has('iconv')
-    let s:enc_euc = 'euc-jp'
-    let s:enc_jis = 'iso-2022-jp'
-    if iconv("\x87\x64\x87\x6a", 'cp932', 'eucjp-ms') ==# "\xad\xc5\xad\xcb"
-        let s:enc_euc = 'eucjp-ms'
-        let s:enc_jis = 'iso-2022-jp-3'
-    elseif iconv("\x87\x64\x87\x6a", 'cp932', 'euc-jisx0213') ==# "\xad\xc5\xad\xcb"
-        let s:enc_euc = 'euc-jisx0213'
-        let s:enc_jis = 'iso-2022-jp-3'
-    endif
-    if &encoding ==# 'utf-8'
-        let s:fileencodings_default = &fileencodings
-        if has('mac')
-            let &fileencodings = s:enc_jis .','. s:enc_euc
-            let &fileencodings = &fileencodings .','. s:fileencodings_default
-        else
-            let &fileencodings = s:enc_jis .','. s:enc_euc .',cp932'
-            let &fileencodings = &fileencodings .','. s:fileencodings_default
-        endif
-        unlet s:fileencodings_default
-    else
-        let &fileencodings = &fileencodings .','. s:enc_jis
-        set fileencodings+=utf-8,ucs-2le,ucs-2
-        if &encoding =~# '^\(euc-jp\|euc-jisx0213\|eucjp-ms\)$'
-            set fileencodings+=cp932
-            set fileencodings-=euc-jp
-            set fileencodings-=euc-jisx0213
-            set fileencodings-=eucjp-ms
-            let &encoding = s:enc_euc
-            let &fileencoding = s:enc_euc
-        else
-            let &fileencodings = &fileencodings .','. s:enc_euc
-        endif
-    endif
-    unlet s:enc_euc
-    unlet s:enc_jis
-endif
+"if &encoding !=# 'utf-8'
+"    set encoding=japan
+"    set fileencoding=japan
+"endif
+"if has('iconv')
+"    let s:enc_euc = 'euc-jp'
+"    let s:enc_jis = 'iso-2022-jp'
+"    if iconv("\x87\x64\x87\x6a", 'cp932', 'eucjp-ms') ==# "\xad\xc5\xad\xcb"
+"        let s:enc_euc = 'eucjp-ms'
+"        let s:enc_jis = 'iso-2022-jp-3'
+"    elseif iconv("\x87\x64\x87\x6a", 'cp932', 'euc-jisx0213') ==# "\xad\xc5\xad\xcb"
+"        let s:enc_euc = 'euc-jisx0213'
+"        let s:enc_jis = 'iso-2022-jp-3'
+"    endif
+"    if &encoding ==# 'utf-8'
+"        let s:fileencodings_default = &fileencodings
+"        if has('mac')
+"            let &fileencodings = s:enc_jis .','. s:enc_euc
+"            let &fileencodings = &fileencodings .','. s:fileencodings_default
+"        else
+"            let &fileencodings = s:enc_jis .','. s:enc_euc .',cp932'
+"            let &fileencodings = &fileencodings .','. s:fileencodings_default
+"        endif
+"        unlet s:fileencodings_default
+"    else
+"        let &fileencodings = &fileencodings .','. s:enc_jis
+"        set fileencodings+=utf-8,ucs-2le,ucs-2
+"        if &encoding =~# '^\(euc-jp\|euc-jisx0213\|eucjp-ms\)$'
+"            set fileencodings+=cp932
+"            set fileencodings-=euc-jp
+"            set fileencodings-=euc-jisx0213
+"            set fileencodings-=eucjp-ms
+"            let &encoding = s:enc_euc
+"            let &fileencoding = s:enc_euc
+"        else
+"            let &fileencodings = &fileencodings .','. s:enc_euc
+"        endif
+"    endif
+"    unlet s:enc_euc
+"    unlet s:enc_jis
+"endif
 
 "----------------------------------------
 " Vundle Settings
@@ -248,7 +248,9 @@ call vundle#rc()               " (3)
 
 Bundle 'Shougo/neocomplcache'
 Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-fugitive'
 Bundle 'JavaScript-syntax'
+Bundle 'a.vim'
 
 filetype plugin indent on
 
@@ -273,3 +275,7 @@ function InsertTabWrapper()
 endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
+"-------------------------------------
+"ノーマルモード時にEnterで改行
+"
+noremap <CR> o<ESC>
