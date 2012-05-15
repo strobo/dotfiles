@@ -3,7 +3,7 @@
 	email = kax551@gmail.com
 [core]
 	editor = vim
-	excludesfile = /home/strobo/.gitignore
+	excludesfile = ~/.gitignore
 [color]
 	ui = auto
 [ailas]
