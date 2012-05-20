@@ -184,7 +184,7 @@ set smartindent
 set tabstop=4
 set nowrapscan
 set statusline=%<%f\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%4v\ %l/%L
-"colorscheme delek
+colorscheme koehler
 
 "------------------------------------------------------------
 "if &encoding !=# 'utf-8'
