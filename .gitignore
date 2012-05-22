@@ -1,2 +1,33 @@
 .vim/bundle/*
 
+# Compiled Object files
+*.slo
+*.lo
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+# Object files
+*.o
+
+# Libraries
+*.lib
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+
+# Executables
+*.exe
+*.out
+
+# Vim
+.*.sw[a-z]
+*.un~
+
+*.elf
+*.map
+*.lst
+*.d
+
