@@ -27,6 +27,11 @@
 *.un~
 
 *.elf
+*.bin
+*.hex
+*.lss
+*.s19
+*.sym
 *.map
 *.lst
 *.d
