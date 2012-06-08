@@ -25,6 +25,7 @@ alias nano='nano -w'
 alias ping='ping -c 5'
 alias ..='cd ..'
 alias pacman='pacman-color'
+alias ctags='ctags -R -a'
 
 # new commands
 alias da='date "+%A, %B %d, %Y [%T]"'
