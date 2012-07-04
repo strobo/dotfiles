@@ -156,7 +156,7 @@ set pastetoggle=<F11>
 " two characters wide.
 " インデントにハードタブを使う場合の設定。
 " タブ文字を2文字分の幅で表示する。
-set shiftwidth=2
+set shiftwidth=4
 set tabstop=2
 
 
@@ -279,3 +279,10 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 "ノーマルモード時にEnterで改行
 "
 noremap <CR> o<ESC>
+
+"-------------------------------------
+"見えない文字の表示 – listchars
+"
+set list
+set listchars=tab:»\ ,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+
