@@ -24,7 +24,7 @@ alias mkdir='mkdir -p -v'
 alias nano='nano -w'
 alias ping='ping -c 5'
 alias ..='cd ..'
-alias pacman='pacman-color'
+#alias pacman='pacman-color'
 alias ctags='ctags -R -a'
 
 # new commands
@@ -42,8 +42,8 @@ if [ $UID -ne 0 ]; then
     alias root='sudo su'
     alias reboot='sudo reboot'
     alias halt='sudo halt'
-    alias update='sudo pacman -Su'
-    alias netcfg='sudo netcfg2'
+    #alias update='sudo pacman -Su'
+    #alias netcfg='sudo netcfg2'
 fi
 
 # ls
@@ -66,19 +66,19 @@ alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
 # pacman aliases (if applicable, replace 'pacman' with 'yaourt'/'pacaur'/whatever)
-alias pac="pacman -S"      # default action     - install one or more packages
-alias pacu="pacman -Syu"   # '[u]pdate'         - upgrade all packages to their newest version
-alias pacs="pacman -Ss"    # '[s]earch'         - search for a package using one or more keywords
-alias paci="pacman -Si"    # '[i]nfo'           - show information about a package
-alias pacr="pacman -R"     # '[r]emove'         - uninstall one or more packages
-alias pacl="pacman -Sl"    # '[l]ist'           - list all packages of a repository
-alias pacll="pacman -Qqm"  # '[l]ist [l]ocal'   - list all packages which were locally installed (e.g. AUR packages)
-alias paclo="pacman -Qdt"  # '[l]ist [o]rphans' - list all packages which are orphaned
-alias paco="pacman -Qo"    # '[o]wner'          - determine which package owns a given file
-alias pacf="pacman -Ql"    # '[f]iles'          - list all files installed by a given package
-alias pacc="pacman -Sc"    # '[c]lean cache'    - delete all not currently installed package files
-alias pacm="makepkg -fci"  # '[m]ake'           - make package from PKGBUILD file in current directory
+#alias pac="pacman -S"      # default action     - install one or more packages
+#alias pacu="pacman -Syu"   # '[u]pdate'         - upgrade all packages to their newest version
+#alias pacs="pacman -Ss"    # '[s]earch'         - search for a package using one or more keywords
+#alias paci="pacman -Si"    # '[i]nfo'           - show information about a package
+#alias pacr="pacman -R"     # '[r]emove'         - uninstall one or more packages
+#alias pacl="pacman -Sl"    # '[l]ist'           - list all packages of a repository
+#alias pacll="pacman -Qqm"  # '[l]ist [l]ocal'   - list all packages which were locally installed (e.g. AUR packages)
+#alias paclo="pacman -Qdt"  # '[l]ist [o]rphans' - list all packages which are orphaned
+#alias paco="pacman -Qo"    # '[o]wner'          - determine which package owns a given file
+#alias pacf="pacman -Ql"    # '[f]iles'          - list all files installed by a given package
+#alias pacc="pacman -Sc"    # '[c]lean cache'    - delete all not currently installed package files
+#alias pacm="makepkg -fci"  # '[m]ake'           - make package from PKGBUILD file in current directory
 
 
-PATH=$PATH:/home/strobo/CodeSourcery/Sourcery_G++_Lite/bin
-PATH=$PATH:/opt/android-sdk/platform-tools
+#PATH=$PATH:/home/strobo/CodeSourcery/Sourcery_G++_Lite/bin
+#PATH=$PATH:/opt/android-sdk/platform-tools
