@@ -8,7 +8,7 @@
 #alias ls='ls --color=auto'
 #PS1='[\u@\h \W]\$ '
 #PS1='\[\e[0;31m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[0;31m\]\$ \[\e[m\]\[\e[0;32m\] '
-PS1='\[\e[0;31m\]\u\[\e[m\] \[\e[1;36m\]\w\[\e[m\] \[\e[0;31m\]\$\[\e[m\] '
+PS1='\[\e[0;31m\]\u@\h\[\e[m\] \[\e[1;36m\]\w\[\e[m\] \[\e[0;31m\]\$\[\e[m\] '
 
 if [ -f ~/.dir_colors ]; then
       eval `dircolors ~/.dir_colors`
