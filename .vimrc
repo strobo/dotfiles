@@ -184,7 +184,6 @@ set smartindent
 set tabstop=4
 set nowrapscan
 set statusline=%<%f\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%4v\ %l/%L
-colorscheme koehler
 
 "------------------------------------------------------------
 "if &encoding !=# 'utf-8'
@@ -251,6 +250,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'JavaScript-syntax'
 Bundle 'a.vim'
+Bundle 'nanotech/jellybeans.vim'
 
 filetype plugin indent on
 
@@ -286,3 +286,4 @@ noremap <CR> o<ESC>
 set list
 set listchars=tab:»\ ,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
+colorscheme jellybeans
