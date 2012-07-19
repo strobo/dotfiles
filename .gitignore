@@ -36,3 +36,6 @@
 *.lst
 *.d
 
+# Mac OS Generated files
+.DS_Store
+.AppleDouble
