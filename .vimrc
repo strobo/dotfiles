@@ -286,4 +286,4 @@ noremap <CR> o<ESC>
 set list
 set listchars=tab:»\ ,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
-colorscheme jellybeans
+colorscheme delek
