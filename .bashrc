@@ -82,3 +82,5 @@ alias chgrp='chgrp --preserve-root'
 
 #PATH=$PATH:/home/strobo/CodeSourcery/Sourcery_G++_Lite/bin
 #PATH=$PATH:/opt/android-sdk/platform-tools
+
+source /usr/local/etc/bash_completion
