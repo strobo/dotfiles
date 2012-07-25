@@ -5,11 +5,14 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+source /usr/local/etc/bash_completion
+GIT_PS1_SHOWDIRTYSTATE=true
 #alias ls='ls --color=auto'
 #PS1='[\u@\h \W]\$ '
 #PS1='\[\e[0;31m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[0;31m\]\$ \[\e[m\]\[\e[0;32m\] '
-PS1='\[\e[0;31m\]\u@\h\[\e[m\] \[\e[1;36m\]\w\[\e[m\] \[\e[0;31m\]\$\[\e[m\] '
+PS1='\[\e[0;31m\]\u@\h\[\e[m\]:\[\e[1;36m\]\w\[\e[m\]\[\e[0;31m\]$(__git_ps1 " (%s)")\[\e[m\]\[\033[31m\]$ \[\033[00m\]'
 
+#PS1='\[\033[32m\]\[\033[00m\]\[\033[34m\]\w\[\033[31m\]$(__git_ps1 "[%s]")\[\033[00m\]\$ '
 if [ -f ~/.dir_colors ]; then
       eval `dircolors ~/.dir_colors`
 fi
@@ -83,4 +86,3 @@ alias chgrp='chgrp --preserve-root'
 #PATH=$PATH:/home/strobo/CodeSourcery/Sourcery_G++_Lite/bin
 #PATH=$PATH:/opt/android-sdk/platform-tools
 
-source /usr/local/etc/bash_completion
