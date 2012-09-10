@@ -251,6 +251,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'JavaScript-syntax'
 Bundle 'a.vim'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'gregsexton/VimCalc'
 
 filetype plugin indent on
 
