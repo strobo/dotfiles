@@ -82,7 +82,4 @@ alias chgrp='chgrp --preserve-root'
 #alias pacc="pacman -Sc"    # '[c]lean cache'    - delete all not currently installed package files
 #alias pacm="makepkg -fci"  # '[m]ake'           - make package from PKGBUILD file in current directory
 
-
-#PATH=$PATH:/home/strobo/CodeSourcery/Sourcery_G++_Lite/bin
-#PATH=$PATH:/opt/android-sdk/platform-tools
-
+PATH=/opt/local/bin:/opt/local/sbin:$PATH
