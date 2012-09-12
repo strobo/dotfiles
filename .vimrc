@@ -321,3 +321,9 @@ function! s:GetHighlight(hi)
 	let hl = substitute(hl, 'xxx', '', '')
 	return hl
 endfunction
+
+if has('unix') && !has('gui_running')
+	inoremap <silent> <Esc> <Esc>
+	inoremap <silent> <C-[> <Esc>
+endif
+
