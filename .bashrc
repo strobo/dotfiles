@@ -5,7 +5,15 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-source /usr/local/etc/bash_completion
+if [ -f /opt/local/share/git-core/git-prompt.sh ]; then
+	source /opt/local/share/git-core/git-prompt.sh
+fi
+
+# bash completion
+if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
+	. /opt/local/etc/profile.d/bash_completion.sh
+fi
+
 GIT_PS1_SHOWDIRTYSTATE=true
 #alias ls='ls --color=auto'
 #PS1='[\u@\h \W]\$ '
@@ -82,4 +90,22 @@ alias chgrp='chgrp --preserve-root'
 #alias pacc="pacman -Sc"    # '[c]lean cache'    - delete all not currently installed package files
 #alias pacm="makepkg -fci"  # '[m]ake'           - make package from PKGBUILD file in current directory
 
-PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
+export PORTS_HOME=/opt/local
+export PATH=$PORTS_HOME/bin:$PORTS_HOME/sbin:$PATH
+export MANPATH=$PORTS_HOME/man:$MANPATH
+
+# PATH for searching c headers
+export C_INCLUDE_PATH=$PORTS_HOME/include:$C_INCLUDE_PATH
+
+# PATH for searching c++ headers
+export CPLUS_INCLUDE_PATH=$PORTS_HOME/include:$CPLUS_INCLUDE_PATH
+
+# Library PATH for gcc when using -l option
+LIBRARY_PATH=.:$PORTS_HOME/lib:$LIBRARY_PATH
+
+# runtime library PATH
+#     By default, it is set to $(HOME)/lib:/usr/local/lib:/lib:/usr/lib.
+#     ref: http://apribase.net/2010/11/13/macports-dyld_library_path/
+#export DYLD_FALLBACK_LIBRARY_PATH=.:$PORTS_HOME/lib:$DYLD_FALLBACK_LIBRARY_PATH
+
