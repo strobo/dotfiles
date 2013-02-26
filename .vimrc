@@ -287,7 +287,9 @@ noremap <CR> o<ESC>
 set list
 set listchars=tab:»\ ,trail:-,extends:»,precedes:«,nbsp:%
 
-colorscheme molokai
+colorscheme darkblue
+
+set cursorline
 
 """"""""""""""""""""""""""""""
 "挿入モード時、ステータスラインの色を変更
