@@ -92,7 +92,7 @@ alias chgrp='chgrp --preserve-root'
 
 
 export PORTS_HOME=/opt/local
-export PATH=$PORTS_HOME/bin:$PORTS_HOME/sbin:$PATH
+export PATH=$PORTS_HOME/bin:$PORTS_HOME/sbin:$PATH:/Users/strobo/work/arm/gcc-arm-none-eabi-4_7-2012q4/bin
 export MANPATH=$PORTS_HOME/man:$MANPATH
 
 # PATH for searching c headers

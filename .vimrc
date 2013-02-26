@@ -286,7 +286,7 @@ noremap <CR> o<ESC>
 "見えない文字の表示 – listchars
 "
 set list
-set listchars=tab:»\ ,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+set listchars=tab:»\ ,trail:-,extends:»,precedes:«,nbsp:%
 
 colorscheme delek
 
