@@ -228,31 +228,30 @@ set statusline=%<%f\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%4v\ 
 "    unlet s:enc_jis
 "endif
 
-"----------------------------------------
-" Vundle Settings
-"
-" --- examples ---
-" original repos on github
-" Bundle 'tpope/vim-fugitive'
-"
-" " vim-scripts repos
-" Bundle 'rails.vim'
-"
-" " non github repos
-" Bundle 'git://git.wincent.com/command-t.git'
 
 filetype off
-set rtp+=~/.vim/vundle.git/    " (2)
-call vundle#rc()               " (3)
+if has('vim_starting')
+	set runtimepath+=~/dotfiles/.vim/neobundle.vim
+	call neobundle#rc(expand('~/dotfiles/.vim/bundle'))
+endif
 
-Bundle 'Shougo/neocomplcache'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'JavaScript-syntax'
-Bundle 'a.vim'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'gregsexton/VimCalc'
-Bundle 'Lokaltog/vim-powerline'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'JavaScript-syntax'
+NeoBundle 'a.vim'
+NeoBundle 'gregsexton/VimCalc'
+NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'vim-scripts/twilight'
+NeoBundle 'jonathanfilip/vim-lucius'
+NeoBundle 'jpo/vim-railscasts-theme'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'vim-scripts/Wombat'
+NeoBundle 'tomasr/molokai'
+NeoBundle 'vim-scripts/rdark'
 
 filetype plugin indent on
 
@@ -288,7 +287,7 @@ noremap <CR> o<ESC>
 set list
 set listchars=tab:»\ ,trail:-,extends:»,precedes:«,nbsp:%
 
-colorscheme delek
+colorscheme molokai
 
 """"""""""""""""""""""""""""""
 "挿入モード時、ステータスラインの色を変更
