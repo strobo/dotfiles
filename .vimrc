@@ -137,7 +137,7 @@ set notimeout ttimeout ttimeoutlen=200
 " <F11>キーで'paste'と'nopaste'を切り替える
 set pastetoggle=<F11>
 
-
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 "------------------------------------------------------------
 " Indentation options {{{1
 " インデント関連のオプション {{{1
@@ -241,8 +241,8 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'JavaScript-syntax'
 NeoBundle 'a.vim'
 NeoBundle 'gregsexton/VimCalc'
-NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'Shougo/vimshell'
+NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'vim-scripts/twilight'
@@ -252,6 +252,11 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'vim-scripts/Wombat'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'vim-scripts/rdark'
+NeoBundle 'Lokaltog/powerline'
+NeoBundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+
+set rtp+=~/dotfiles/.vim/bundle/powerline/powerline/bindings/vim
+set t_Co=256
 
 filetype plugin indent on
 
@@ -287,45 +292,15 @@ noremap <CR> o<ESC>
 set list
 set listchars=tab:»\ ,trail:-,extends:»,precedes:«,nbsp:%
 
-colorscheme darkblue
+colorscheme railscasts
 
 set cursorline
 
-""""""""""""""""""""""""""""""
-"挿入モード時、ステータスラインの色を変更
-"""""""""""""""""""""""""""""""
-"let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
-"
-"if has('syntax')
-"	augroup InsertHook
-"		autocmd!
-"		autocmd InsertEnter * call s:StatusLine('Enter')
-"		autocmd InsertLeave * call s:StatusLine('Leave')
-"	augroup END
-"endif
-"
-"let s:slhlcmd = ''
-"function! s:StatusLine(mode)
-"	if a:mode == 'Enter'
-"		silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
-"		silent exec g:hi_insert
-"	else
-"		highlight clear StatusLine
-"		silent exec s:slhlcmd
-"	endif
-"endfunction
-"
-"function! s:GetHighlight(hi)
-"	redir => hl
-"	exec 'highlight '.a:hi
-"	redir END
-"	let hl = substitute(hl, '[\r\n]', '', 'g')
-"	let hl = substitute(hl, 'xxx', '', '')
-"	return hl
-"endfunction
-"
-"if has('unix') && !has('gui_running')
-"	inoremap <silent> <Esc> <Esc>
-"	inoremap <silent> <C-[> <Esc>
-"endif
+"Latex
 
+let tex_flavor = 'latex'
+set grepprg=grep\ -nH\ $*
+set shellslash
+let g:Tex_CompileRule_dvi = 'latex --interaction=nonstopmode $*'
+let g:Tex_CompileRule_pdf = 'dvipdfmx $*.dvi'
+let g:Tex_FormatDependency_pdf = 'dvi,pdf'

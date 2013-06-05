@@ -72,9 +72,9 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'                    # 'rm -i' prompts for every file
 alias ln='ln -i'
-alias chown='chown --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chgrp='chgrp --preserve-root'
+#alias chown='chown --preserve-root'
+#alias chmod='chmod --preserve-root'
+#alias chgrp='chgrp --preserve-root'
 
 # pacman aliases (if applicable, replace 'pacman' with 'yaourt'/'pacaur'/whatever)
 #alias pac="pacman -S"      # default action     - install one or more packages
