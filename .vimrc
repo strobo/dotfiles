@@ -253,7 +253,7 @@ NeoBundle 'vim-scripts/Wombat'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'vim-scripts/rdark'
 NeoBundle 'Lokaltog/powerline'
-NeoBundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+NeoBundle 'tpope/vim-surround'
 
 set rtp+=~/dotfiles/.vim/bundle/powerline/powerline/bindings/vim
 set t_Co=256
@@ -295,12 +295,3 @@ set listchars=tab:»\ ,trail:-,extends:»,precedes:«,nbsp:%
 colorscheme railscasts
 
 set cursorline
-
-"Latex
-
-let tex_flavor = 'latex'
-set grepprg=grep\ -nH\ $*
-set shellslash
-let g:Tex_CompileRule_dvi = 'latex --interaction=nonstopmode $*'
-let g:Tex_CompileRule_pdf = 'dvipdfmx $*.dvi'
-let g:Tex_FormatDependency_pdf = 'dvi,pdf'
