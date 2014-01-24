@@ -231,9 +231,11 @@ set statusline=%<%f\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%4v\ 
 
 filetype off
 if has('vim_starting')
-	set runtimepath+=~/dotfiles/.vim/neobundle.vim
+	set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim/
 	call neobundle#rc(expand('~/dotfiles/.vim/bundle'))
 endif
+
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'tpope/vim-fugitive'
@@ -262,6 +264,8 @@ NeoBundle 'Shougo/vimproc', {
       \     'unix' : 'make -f make_unix.mak',
       \    },
       \ }
+
+NeoBundleCheck
 
 set rtp+=~/dotfiles/.vim/bundle/powerline/powerline/bindings/vim
 set t_Co=256
